@@ -16,3 +16,6 @@ Here's basically how this works:
 - Any Admin for a Realm can create groups under that realm, and also do posts to the entire realm or a group in that realm.
 - Any Member that is part of a realm, admin or not, can comment on posts in that realm.
 - If you are not part of a realm, you cannot view anything in that realm, only it's name, and submit an application to it.
+
+Here's a helpful diagram that should make this structure clearer:
+![Diagram 1](./Anchorwebsetup.svg "Diagram 1")

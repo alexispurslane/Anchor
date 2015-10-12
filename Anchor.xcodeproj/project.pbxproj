@@ -12,6 +12,18 @@
 		D5340B251BC9C003004368CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5340B231BC9C003004368CD /* Main.storyboard */; };
 		D5340B271BC9C003004368CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5340B261BC9C003004368CD /* Assets.xcassets */; };
 		D5340B2A1BC9C003004368CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5340B281BC9C003004368CD /* LaunchScreen.storyboard */; };
+		D5340B341BC9C305004368CD /* sea-waves-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = D5340B331BC9C305004368CD /* sea-waves-hi.png */; };
+		D5340B361BC9DC9A004368CD /* red-anchor-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = D5340B351BC9DC9A004368CD /* red-anchor-hi.png */; };
+		D5340B381BC9DD32004368CD /* red-anchor-hi-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = D5340B371BC9DD32004368CD /* red-anchor-hi-sprite.png */; };
+		D5340B3B1BC9E4F0004368CD /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5340B391BC9E4F0004368CD /* GoogleSignIn.bundle */; };
+		D5340B3C1BC9E4F0004368CD /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5340B3A1BC9E4F0004368CD /* GoogleSignIn.framework */; };
+		D5340B3E1BC9E539004368CD /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5340B3D1BC9E539004368CD /* AddressBook.framework */; };
+		D5340B401BC9E547004368CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5340B3F1BC9E547004368CD /* StoreKit.framework */; };
+		D5340B421BC9E54E004368CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5340B411BC9E54E004368CD /* SystemConfiguration.framework */; };
+		D5340B471BC9EC31004368CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5340B461BC9EC31004368CD /* GoogleService-Info.plist */; };
+		D5340B491BCAB3AC004368CD /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5340B481BCAB3AC004368CD /* HomepageViewController.swift */; };
+		D5340B4B1BCB5583004368CD /* sample-1040-checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5340B4A1BCB5583004368CD /* sample-1040-checkmark@2x.png */; };
+		D5340B4D1BCBFF9A004368CD /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5340B4C1BCBFF9A004368CD /* AdminViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +34,19 @@
 		D5340B261BC9C003004368CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5340B291BC9C003004368CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5340B2B1BC9C003004368CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5340B331BC9C305004368CD /* sea-waves-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sea-waves-hi.png"; sourceTree = "<group>"; };
+		D5340B351BC9DC9A004368CD /* red-anchor-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-anchor-hi.png"; sourceTree = "<group>"; };
+		D5340B371BC9DD32004368CD /* red-anchor-hi-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-anchor-hi-sprite.png"; sourceTree = "<group>"; };
+		D5340B391BC9E4F0004368CD /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = Anchor/GoogleSignIn.bundle; sourceTree = "<group>"; };
+		D5340B3A1BC9E4F0004368CD /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Anchor/GoogleSignIn.framework; sourceTree = "<group>"; };
+		D5340B3D1BC9E539004368CD /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		D5340B3F1BC9E547004368CD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D5340B411BC9E54E004368CD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D5340B451BC9E659004368CD /* GSignIn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSignIn-Bridging-Header.h"; sourceTree = "<group>"; };
+		D5340B461BC9EC31004368CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D5340B481BCAB3AC004368CD /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		D5340B4A1BCB5583004368CD /* sample-1040-checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-1040-checkmark@2x.png"; sourceTree = "<group>"; };
+		D5340B4C1BCBFF9A004368CD /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +54,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5340B421BC9E54E004368CD /* SystemConfiguration.framework in Frameworks */,
+				D5340B401BC9E547004368CD /* StoreKit.framework in Frameworks */,
+				D5340B3E1BC9E539004368CD /* AddressBook.framework in Frameworks */,
+				D5340B3C1BC9E4F0004368CD /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +67,17 @@
 		D5340B131BC9C002004368CD = {
 			isa = PBXGroup;
 			children = (
+				D5340B391BC9E4F0004368CD /* GoogleSignIn.bundle */,
+				D5340B3A1BC9E4F0004368CD /* GoogleSignIn.framework */,
+				D5340B411BC9E54E004368CD /* SystemConfiguration.framework */,
+				D5340B3F1BC9E547004368CD /* StoreKit.framework */,
+				D5340B3D1BC9E539004368CD /* AddressBook.framework */,
 				D5340B1E1BC9C003004368CD /* Anchor */,
 				D5340B1D1BC9C003004368CD /* Products */,
+				D5340B331BC9C305004368CD /* sea-waves-hi.png */,
+				D5340B351BC9DC9A004368CD /* red-anchor-hi.png */,
+				D5340B371BC9DD32004368CD /* red-anchor-hi-sprite.png */,
+				D5340B4A1BCB5583004368CD /* sample-1040-checkmark@2x.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,8 +93,12 @@
 			isa = PBXGroup;
 			children = (
 				D5340B1F1BC9C003004368CD /* AppDelegate.swift */,
-				D5340B211BC9C003004368CD /* ViewController.swift */,
 				D5340B231BC9C003004368CD /* Main.storyboard */,
+				D5340B4C1BCBFF9A004368CD /* AdminViewController.swift */,
+				D5340B481BCAB3AC004368CD /* HomepageViewController.swift */,
+				D5340B211BC9C003004368CD /* ViewController.swift */,
+				D5340B461BC9EC31004368CD /* GoogleService-Info.plist */,
+				D5340B451BC9E659004368CD /* GSignIn-Bridging-Header.h */,
 				D5340B261BC9C003004368CD /* Assets.xcassets */,
 				D5340B281BC9C003004368CD /* LaunchScreen.storyboard */,
 				D5340B2B1BC9C003004368CD /* Info.plist */,
@@ -122,8 +164,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5340B4B1BCB5583004368CD /* sample-1040-checkmark@2x.png in Resources */,
+				D5340B381BC9DD32004368CD /* red-anchor-hi-sprite.png in Resources */,
+				D5340B471BC9EC31004368CD /* GoogleService-Info.plist in Resources */,
 				D5340B2A1BC9C003004368CD /* LaunchScreen.storyboard in Resources */,
+				D5340B361BC9DC9A004368CD /* red-anchor-hi.png in Resources */,
+				D5340B341BC9C305004368CD /* sea-waves-hi.png in Resources */,
 				D5340B271BC9C003004368CD /* Assets.xcassets in Resources */,
+				D5340B3B1BC9E4F0004368CD /* GoogleSignIn.bundle in Resources */,
 				D5340B251BC9C003004368CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5340B4D1BCBFF9A004368CD /* AdminViewController.swift in Sources */,
 				D5340B221BC9C003004368CD /* ViewController.swift in Sources */,
 				D5340B201BC9C003004368CD /* AppDelegate.swift in Sources */,
+				D5340B491BCAB3AC004368CD /* HomepageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +299,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Anchor",
+				);
 				INFOPLIST_FILE = Anchor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = org.gbf.Anchor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Anchor/GSignIn-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -260,10 +316,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Anchor",
+				);
 				INFOPLIST_FILE = Anchor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				"OTHER_LDFLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.gbf.Anchor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Anchor/GSignIn-Bridging-Header.h";
 			};
 			name = Release;
 		};

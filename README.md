@@ -1,7 +1,7 @@
 # Anchor
-## The Church orginization and connection app of the future.
+## A church orginization and connection app
 
-This iPhone (and later Android) app is basically Facebook for Churches, with more infrastructure.
+This iPhone app (and later for Android) is a communications App for Church leaders which allows them to effectively and safely communicate with groups, and sub-groups of users, so it can be perfectly tailored to all your church communications needs.
 
 There are three types of things in this app setup:
 

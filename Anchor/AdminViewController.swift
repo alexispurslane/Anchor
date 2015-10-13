@@ -10,7 +10,7 @@ class AdminViewController: UITableViewController {
     var username: String = ""
     var password: String = ""
     var realm: String = ""
-    var admins: [String] = [""]
+    var admins: [String] = []
     
     @IBOutlet weak var adminCandidates: UITableViewCell!
     @IBOutlet weak var memberCandidates: UITableViewCell!
@@ -26,6 +26,7 @@ class AdminViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(19, weight: UIFontWeightThin)]
         
+        print(admins)
         if let _ = admins.indexOf(username) {
         } else {
             adminCandidates.userInteractionEnabled = false
@@ -46,5 +47,13 @@ class AdminViewController: UITableViewController {
             realmMembers.userInteractionEnabled = false
             realmMembers.textLabel?.enabled = false
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let nav = segue.destinationViewController as! UINavigationController
+        let vc = nav.topViewController as! HomepageViewController
+        vc.username = self.username
+        vc.password = self.password
+        vc.realm = self.realm
     }
 }

@@ -11,6 +11,14 @@ import UIKit
 class Post {
     var author = "Unknown"
     var text   = "Lorem Ipsum Ildor, austin set amet, amor ilsor olet"
+    var comments: [Post] = []
+    
+    init(author: String, text: String, comments: [Post]) {
+        self.author = author
+        self.text = text
+        self.comments = comments
+    }
+    
     init(author: String, text: String) {
         self.author = author
         self.text = text
@@ -37,6 +45,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var newAnchor: UIBarButtonItem!
     
+    @IBOutlet weak var postButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -45,13 +54,24 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.dataSource = self
         
         if realm == "GBF" {
-            teacherPosts = [[Post(author: "Ed Chou"), Post(author: "Austin Thompsan"), Post(author: "David Tong")], [Post(author: "Cliff McManis", text: "Hope House Concert - Oct 23")]]
+            teacherPosts = [[Post(author: "Ed Chou", text: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", comments: [Post(author: "Somebody"), Post(author: "Somebody Else")]),
+                             Post(author: "Austin Thompsan", text: "something else"),
+                             Post(author: "David Tong", text: "some other thing")],
+                            [Post(author: "Cliff McManis", text: "Hope House Concert - Oct 23")]]
             sections = ["Youth Group", "Events"]
-            admins = ["Austin Thompsan", "Ed Chou", "David Tong"]
+            admins = ["Austin Thompsan", "Ed Chou", "David Tong", "Cliff McManis"]
         } else {
             teacherPosts = [[Post(author: "Jonny Appleseed")]]
             sections = ["Puorg Htuoy"]
             admins = ["Jonny Appleseed"]
+        }
+        
+        if let _ = admins.indexOf(username) {
+            postButton.enabled = true
+            postButton.tintColor = UIColor.redColor()
+        } else {
+            postButton.enabled = false
+            postButton.tintColor = UIColor.clearColor()
         }
     }
     
@@ -65,12 +85,24 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        let nav = segue.destinationViewController as! UINavigationController
-        let vc = nav.topViewController as! AdminViewController
-        vc.username = self.username
-        vc.password = self.password
-        vc.realm = self.realm
-        vc.admins = self.admins
+        print(segue.identifier)
+        if segue.identifier == "Adminpage" {
+            let vc = segue.destinationViewController as! AdminViewController
+            vc.username = self.username
+            vc.password = self.password
+            vc.realm = self.realm
+            vc.admins = self.admins
+        } else if segue.identifier == "Postpage" {
+            let vc = segue.destinationViewController as! PostViewController
+            
+            let myIndexPath = self.tableView.indexPathForSelectedRow
+            vc.post = self.teacherPosts[myIndexPath!.section][myIndexPath!.row]
+        } else if segue.identifier == "Addpostpage" {
+            let vc = segue.destinationViewController as! SpeakViewControler
+            vc.realm = self.realm
+            vc.username = self.username
+            vc.password = self.password
+        }
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

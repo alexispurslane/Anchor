@@ -24,6 +24,9 @@
 		D5340B491BCAB3AC004368CD /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5340B481BCAB3AC004368CD /* HomepageViewController.swift */; };
 		D5340B4B1BCB5583004368CD /* sample-1040-checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5340B4A1BCB5583004368CD /* sample-1040-checkmark@2x.png */; };
 		D5340B4D1BCBFF9A004368CD /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5340B4C1BCBFF9A004368CD /* AdminViewController.swift */; };
+		D5340B4F1BCC6730004368CD /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5340B4E1BCC6730004368CD /* PostViewController.swift */; };
+		D5340B511BCD9214004368CD /* UITableViewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5340B501BCD9214004368CD /* UITableViewCard.swift */; };
+		D5340B531BCDA933004368CD /* SpeakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5340B521BCDA933004368CD /* SpeakViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		D5340B481BCAB3AC004368CD /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		D5340B4A1BCB5583004368CD /* sample-1040-checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-1040-checkmark@2x.png"; sourceTree = "<group>"; };
 		D5340B4C1BCBFF9A004368CD /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		D5340B4E1BCC6730004368CD /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		D5340B501BCD9214004368CD /* UITableViewCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCard.swift; sourceTree = "<group>"; };
+		D5340B521BCDA933004368CD /* SpeakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,9 @@
 			children = (
 				D5340B1F1BC9C003004368CD /* AppDelegate.swift */,
 				D5340B231BC9C003004368CD /* Main.storyboard */,
+				D5340B521BCDA933004368CD /* SpeakViewController.swift */,
+				D5340B501BCD9214004368CD /* UITableViewCard.swift */,
+				D5340B4E1BCC6730004368CD /* PostViewController.swift */,
 				D5340B4C1BCBFF9A004368CD /* AdminViewController.swift */,
 				D5340B481BCAB3AC004368CD /* HomepageViewController.swift */,
 				D5340B211BC9C003004368CD /* ViewController.swift */,
@@ -184,9 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5340B4D1BCBFF9A004368CD /* AdminViewController.swift in Sources */,
+				D5340B531BCDA933004368CD /* SpeakViewController.swift in Sources */,
 				D5340B221BC9C003004368CD /* ViewController.swift in Sources */,
 				D5340B201BC9C003004368CD /* AppDelegate.swift in Sources */,
+				D5340B511BCD9214004368CD /* UITableViewCard.swift in Sources */,
 				D5340B491BCAB3AC004368CD /* HomepageViewController.swift in Sources */,
+				D5340B4F1BCC6730004368CD /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

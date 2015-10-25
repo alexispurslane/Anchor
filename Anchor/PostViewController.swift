@@ -5,7 +5,7 @@
 //  Created by Christopher Dumas on 10/12/15.
 //  Copyright © 2015 Christopher Dumas. All rights reserved.
 //
-
+import Firebase
 class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var post: Post = Post(author: "Nobody")
     
@@ -22,7 +22,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 200.0
+        tableView.rowHeight = 100
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

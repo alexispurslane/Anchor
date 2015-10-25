@@ -5,7 +5,7 @@
 //  Created by Christopher Dumas on 10/11/15.
 //  Copyright © 2015 Christopher Dumas. All rights reserved.
 //
-
+import Firebase
 import UIKit
 
 class Post {
@@ -31,6 +31,16 @@ class Post {
     init(text: String) {
         self.text = text
     }
+    
+    class func fromDictionary (dic: NSDictionary) -> Post {
+        var c: [Post] = [];
+        if let _c = dic["comments"] {
+            c = (_c as! [NSDictionary]).map(fromDictionary)
+        }
+        return Post(author: dic["author"] as! String,
+            text: dic["text"] as! String,
+            comments: c)
+    }
 }
 
 class HomepageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -40,12 +50,18 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     var teacherPosts: [[Post]] = []
     var sections: [String] = []
     var admins: [String] = []
+    var myRootRef = Firebase(url:"https://anchor-ios-app.firebaseio.com");
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var newAnchor: UIBarButtonItem!
     
     @IBOutlet weak var postButton: UIBarButtonItem!
+    
+    func dicToPost(dic: NSDictionary) -> Post {
+        return Post(text: "Placeholder")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -53,26 +69,47 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        if realm == "GBF" {
-            teacherPosts = [[Post(author: "Ed Chou", text: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", comments: [Post(author: "Somebody"), Post(author: "Somebody Else")]),
-                             Post(author: "Austin Thompsan", text: "something else"),
-                             Post(author: "David Tong", text: "some other thing")],
-                            [Post(author: "Cliff McManis", text: "Hope House Concert - Oct 23")]]
-            sections = ["Youth Group", "Events"]
-            admins = ["Austin Thompsan", "Ed Chou", "David Tong", "Cliff McManis"]
-        } else {
-            teacherPosts = [[Post(author: "Jonny Appleseed")]]
-            sections = ["Puorg Htuoy"]
-            admins = ["Jonny Appleseed"]
-        }
-        
-        if let _ = admins.indexOf(username) {
-            postButton.enabled = true
-            postButton.tintColor = UIColor.redColor()
-        } else {
-            postButton.enabled = false
-            postButton.tintColor = UIColor.clearColor()
-        }
+        myRootRef = Firebase(url:"https://anchor-ios-app.firebaseio.com/" + realm)
+        myRootRef.observeEventType(.Value, withBlock: { snapshot in
+            self.admins = (snapshot.value.objectForKey("admins")! as! [String])
+            self.sections = (snapshot.value.objectForKey("groups")! as! [String])
+            let posts = (snapshot.value.objectForKey("posts")! as! [NSDictionary])
+            
+            func distinct<T: Equatable>(source: [T]) -> [T] {
+                var unique = [T]()
+                for item in source {
+                    if !unique.contains(item) {
+                        unique.append(item)
+                    }
+                }
+                return unique
+            }
+            
+            func groupPosts(posts: [NSDictionary]) -> [(String, [Post])] {
+                let postGroups = posts.map { ($0["group"] as! String) }
+                let distinctGroups = distinct(postGroups)
+                
+                return distinctGroups.map {
+                    (group) in
+                        return (group, posts.filter { (post) -> Bool in
+                            return (post["group"] as! String) == group
+                        }.map(Post.fromDictionary))
+                }
+            }
+            
+            self.teacherPosts = groupPosts(posts).map({ $0.1 })
+            self.tableView.reloadData()
+            
+            if let _ = self.admins.indexOf(self.username) {
+                self.postButton.enabled = true
+                self.postButton.tintColor = UIColor.redColor()
+            } else {
+                self.postButton.enabled = false
+                self.postButton.tintColor = UIColor.clearColor()
+            }
+        }, withCancelBlock: { error in
+            print(error.description)
+        })
     }
     
     override func prefersStatusBarHidden() -> Bool {

@@ -5,7 +5,7 @@
 //  Created by Christopher Dumas on 10/12/15.
 //  Copyright © 2015 Christopher Dumas. All rights reserved.
 //
-
+import Firebase
 class AdminViewController: UITableViewController {
     var username: String = ""
     var password: String = ""
@@ -50,10 +50,30 @@ class AdminViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let nav = segue.destinationViewController as! UINavigationController
-        let vc = nav.topViewController as! HomepageViewController
-        vc.username = self.username
-        vc.password = self.password
-        vc.realm = self.realm
+        if (segue.identifier == "Adminpage") {
+            let nav = segue.destinationViewController as! UINavigationController
+            let vc = nav.topViewController as! HomepageViewController
+            vc.username = self.username
+            vc.password = self.password
+            vc.realm = self.realm
+        } else if (segue.identifier == "adminCR") {
+            let vc = segue.destinationViewController as! AdminMemberRequestsViewController
+            vc.type = AM.Admin
+        } else if (segue.identifier == "memberCR") {
+            let vc = segue.destinationViewController as! AdminMemberRequestsViewController
+            vc.type = AM.Member
+        } else if (segue.identifier == "newGroup") {
+            let vc = segue.destinationViewController as! AddJoinViewController
+            vc.type = AM.NewGroup
+        } else if (segue.identifier == "newRealm") {
+            let vc = segue.destinationViewController as! AddJoinViewController
+            vc.type = AM.NewRealm
+        } else if (segue.identifier == "applyMembership") {
+            let vc = segue.destinationViewController as! AddJoinViewController
+            vc.type = AM.ApplyForMembership
+        } else if (segue.identifier == "applyAdminship") {
+            let vc = segue.destinationViewController as! AddJoinViewController
+            vc.type = AM.ApplyForAdminship
+        }
     }
 }

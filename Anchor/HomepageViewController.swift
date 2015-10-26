@@ -50,7 +50,8 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     var teacherPosts: [[Post]] = []
     var sections: [String] = []
     var admins: [String] = []
-    var myRootRef = Firebase(url:"https://anchor-ios-app.firebaseio.com");
+    var myRootRef = Firebase(url:"https://anchor-ios-app.firebaseio.com")
+    var refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -64,12 +65,29 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let _ = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(19, weight: UIFontWeightThin)]
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.refreshControl.backgroundColor = UIColor.redColor()
+        self.refreshControl.tintColor = UIColor.whiteColor()
+        self.refreshControl.addTarget(self, action: Selector("updateTableView"), forControlEvents: .ValueChanged)
+        self.tableView.addSubview(refreshControl)
+        
         myRootRef = Firebase(url:"https://anchor-ios-app.firebaseio.com/" + realm)
+        updateTableView()
+    }
+    
+    func update() {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func updateTableView() {
         myRootRef.observeEventType(.Value, withBlock: { snapshot in
             self.admins = (snapshot.value.objectForKey("admins")! as! [String])
             self.sections = (snapshot.value.objectForKey("groups")! as! [String])
@@ -91,8 +109,8 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 return distinctGroups.map {
                     (group) in
-                        return (group, posts.filter { (post) -> Bool in
-                            return (post["group"] as! String) == group
+                    return (group, posts.filter { (post) -> Bool in
+                        return (post["group"] as! String) == group
                         }.map(Post.fromDictionary))
                 }
             }
@@ -110,6 +128,8 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         }, withCancelBlock: { error in
             print(error.description)
         })
+        
+        self.refreshControl.endRefreshing()
     }
     
     override func prefersStatusBarHidden() -> Bool {

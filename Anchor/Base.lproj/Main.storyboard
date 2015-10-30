@@ -171,7 +171,7 @@
                                         <barButtonItem systemItem="add" id="zSF-QU-Mjq">
                                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="VMH-N6-Klt" kind="show" identifier="Addpostpage" id="b6X-BS-wLf"/>
+                                                <segue destination="VMH-N6-Klt" kind="show" identifier="Addpostpage" id="aD3-q7-9Fm"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="c5Z-vd-bfe"/>
@@ -241,7 +241,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="newAnchor" destination="1vX-DX-Ofk" id="2lc-zc-O4G"/>
-                        <outlet property="postButton" destination="zSF-QU-Mjq" id="VGP-wl-OsS"/>
+                        <outlet property="postButton" destination="zSF-QU-Mjq" id="Lv4-0p-j6G"/>
                         <outlet property="tableView" destination="mqA-Lx-dW5" id="s10-X8-hks"/>
                     </connections>
                 </viewController>
@@ -262,7 +262,7 @@
                             <tableViewSection headerTitle="Candidate Requests" id="1Ec-5a-Tzj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="g1W-fG-US1" style="IBUITableViewCellStyleDefault" id="9Jq-Nh-Pvk">
-                                        <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Jq-Nh-Pvk" id="Tis-nl-v5H">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -285,7 +285,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Uj6-v4-5F6" style="IBUITableViewCellStyleDefault" id="Psc-BQ-6Cg">
-                                        <rect key="frame" x="0.0" y="93.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="94" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Psc-BQ-6Cg" id="n2J-AU-ZH6">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -312,7 +312,7 @@
                             <tableViewSection headerTitle="New" id="f9U-Fp-h54">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Qxv-Sb-SbU" style="IBUITableViewCellStyleDefault" id="QqM-84-ekb">
-                                        <rect key="frame" x="0.0" y="187.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="188" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QqM-84-ekb" id="rXN-4N-keF">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -335,7 +335,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="vSe-wy-yLT" style="IBUITableViewCellStyleDefault" id="r1t-1E-x0Z">
-                                        <rect key="frame" x="0.0" y="231.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="232" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r1t-1E-x0Z" id="xUT-yD-XF6">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -362,7 +362,7 @@
                             <tableViewSection headerTitle="Realm Application" id="QGD-8S-Jqb">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="0XM-bf-nbo" style="IBUITableViewCellStyleDefault" id="ie4-Cn-1I5">
-                                        <rect key="frame" x="0.0" y="325.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="326" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ie4-Cn-1I5" id="QiK-Mo-mir">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -385,7 +385,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="xkl-xy-3zt" style="IBUITableViewCellStyleDefault" id="2Jp-5g-Sq8">
-                                        <rect key="frame" x="0.0" y="369.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="370" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Jp-5g-Sq8" id="Pfq-ul-JIh">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -439,7 +439,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NGW-Sd-Hwa" id="Rz7-rB-hJF">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -517,7 +517,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aDX-1A-dfo">
-                                <rect key="frame" x="0.0" y="155" width="600" height="445"/>
+                                <rect key="frame" x="0.0" y="155" width="600" height="381"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -619,7 +619,7 @@
                         <constraints>
                             <constraint firstItem="DtX-WS-R7Y" firstAttribute="leading" secondItem="Dvl-mL-pgS" secondAttribute="leadingMargin" id="0LM-da-V1C"/>
                             <constraint firstItem="aDX-1A-dfo" firstAttribute="leading" secondItem="Dvl-mL-pgS" secondAttribute="leading" id="7UG-Dd-4cl"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="aDX-1A-dfo" secondAttribute="bottom" constant="-44" id="913-Od-yhP"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="aDX-1A-dfo" secondAttribute="bottom" constant="20" id="913-Od-yhP"/>
                             <constraint firstItem="2Vj-7j-fv8" firstAttribute="top" secondItem="DtX-WS-R7Y" secondAttribute="bottom" constant="8" symbolic="YES" id="AfE-Kw-5oI"/>
                             <constraint firstAttribute="trailing" secondItem="aDX-1A-dfo" secondAttribute="trailing" id="IMl-hT-j7n"/>
                             <constraint firstItem="2Vj-7j-fv8" firstAttribute="centerX" secondItem="aDX-1A-dfo" secondAttribute="centerX" id="OSd-JE-Nrh"/>
@@ -639,10 +639,10 @@
             </objects>
             <point key="canvasLocation" x="2074" y="1373"/>
         </scene>
-        <!--Speak View Controler-->
+        <!--Speak View Controller-->
         <scene sceneID="KFs-Vd-Oko">
             <objects>
-                <viewController id="VMH-N6-Klt" customClass="SpeakViewControler" customModule="Anchor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VMH-N6-Klt" customClass="SpeakViewController" customModule="Anchor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L9w-Ng-dQR"/>
                         <viewControllerLayoutGuide type="bottom" id="ksJ-cd-r32"/>
@@ -684,7 +684,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIU-1v-g5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2922" y="-186"/>
+            <point key="canvasLocation" x="2922" y="-289"/>
         </scene>
         <!--Group Manager View Controller-->
         <scene sceneID="2MU-uU-5RZ">
@@ -716,7 +716,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="KhV-bi-YHd" kind="show" id="h89-5B-eQ2"/>
+                                    <segue destination="KhV-bi-YHd" kind="show" identifier="backhome" id="zWR-vf-nbs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -728,16 +728,16 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qA-Yv-yVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3589" y="-186"/>
+            <point key="canvasLocation" x="3589" y="-289"/>
         </scene>
     </scenes>
     <resources>
         <image name="red-anchor-hi-sprite.png" width="600" height="582"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CGU-Fe-Kpv"/>
-        <segue reference="2Ab-NT-gVX"/>
-        <segue reference="MOm-Cm-DoO"/>
         <segue reference="T7P-TZ-ZP5"/>
+        <segue reference="zWR-vf-nbs"/>
+        <segue reference="aD3-q7-9Fm"/>
+        <segue reference="MOm-Cm-DoO"/>
     </inferredMetricsTieBreakers>
 </document>

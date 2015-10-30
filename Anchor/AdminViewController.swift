@@ -26,7 +26,6 @@ class AdminViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(19, weight: UIFontWeightThin)]
         
-        print(admins)
         if let _ = admins.indexOf(username) {
         } else {
             adminCandidates.userInteractionEnabled = false

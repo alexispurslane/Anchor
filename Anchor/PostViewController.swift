@@ -8,6 +8,8 @@
 import Firebase
 class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var post: Post = Post(author: "Nobody")
+    var realm = ""
+    var username = ""
     
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var body: UITextView!
@@ -40,8 +42,10 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Addcommentpage" {
-            let vc = segue.destinationViewController as! SpeakViewControler
+            let vc = segue.destinationViewController as! SpeakViewController
             vc.post = self.post
+            vc.realm = self.realm
+            vc.username = self.username
         }
     }
 }

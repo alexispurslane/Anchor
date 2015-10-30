@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50463DD1BDFCF52007956FE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50463DC1BDFCF52007956FE /* Post.swift */; };
 		D5340B201BC9C003004368CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5340B1F1BC9C003004368CD /* AppDelegate.swift */; };
 		D5340B221BC9C003004368CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5340B211BC9C003004368CD /* ViewController.swift */; };
 		D5340B251BC9C003004368CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5340B231BC9C003004368CD /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D50463DC1BDFCF52007956FE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../Post.swift; sourceTree = "<group>"; };
 		D5340B1C1BC9C003004368CD /* Anchor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anchor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5340B1F1BC9C003004368CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5340B211BC9C003004368CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		D5340B1E1BC9C003004368CD /* Anchor */ = {
 			isa = PBXGroup;
 			children = (
+				D50463DC1BDFCF52007956FE /* Post.swift */,
 				D5B5F1211BDBF6A200CD34E9 /* Firebase.framework */,
 				D5340B541BCE9ACA004368CD /* GroupManagerViewController.swift */,
 				D5340B1F1BC9C003004368CD /* AppDelegate.swift */,
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5340B4D1BCBFF9A004368CD /* AdminViewController.swift in Sources */,
+				D50463DD1BDFCF52007956FE /* Post.swift in Sources */,
 				D5340B531BCDA933004368CD /* SpeakViewController.swift in Sources */,
 				D5B5F1201BDAD44C00CD34E9 /* AddJoinViewController.swift in Sources */,
 				D5340B221BC9C003004368CD /* ViewController.swift in Sources */,

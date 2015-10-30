@@ -8,41 +8,6 @@
 import Firebase
 import UIKit
 
-class Post {
-    var author = "Unknown"
-    var text   = "Lorem Ipsum Ildor, austin set amet, amor ilsor olet"
-    var comments: [Post] = []
-    
-    init(author: String, text: String, comments: [Post]) {
-        self.author = author
-        self.text = text
-        self.comments = comments
-    }
-    
-    init(author: String, text: String) {
-        self.author = author
-        self.text = text
-    }
-    
-    init(author: String) {
-        self.author = author
-    }
-    
-    init(text: String) {
-        self.text = text
-    }
-    
-    class func fromDictionary (dic: NSDictionary) -> Post {
-        var c: [Post] = [];
-        if let _c = dic["comments"] {
-            c = (_c as! [NSDictionary]).map(fromDictionary)
-        }
-        return Post(author: dic["author"] as! String,
-            text: dic["text"] as! String,
-            comments: c)
-    }
-}
-
 class HomepageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var username: String = "Anonymous"
     var password: String = "P@$$W0RD"
@@ -77,21 +42,23 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         self.refreshControl.addTarget(self, action: Selector("updateTableView"), forControlEvents: .ValueChanged)
         self.tableView.addSubview(refreshControl)
         
-        myRootRef = Firebase(url:"https://anchor-ios-app.firebaseio.com/" + realm)
-        updateTableView()
+        let realmRef = myRootRef.childByAppendingPath(realm)
+        updateTableView(realmRef)
     }
     
     func update() {
         dispatch_async(dispatch_get_main_queue()) {
+            let realmRef = self.myRootRef.childByAppendingPath(self.realm)
+            self.updateTableView(realmRef)
             self.tableView.reloadData()
         }
     }
     
-    func updateTableView() {
-        myRootRef.observeEventType(.Value, withBlock: { snapshot in
+    func updateTableView(ref: Firebase) {
+        ref.observeEventType(.Value, withBlock: { snapshot in
             self.admins = (snapshot.value.objectForKey("admins")! as! [String])
             self.sections = (snapshot.value.objectForKey("groups")! as! [String])
-            let posts = (snapshot.value.objectForKey("posts")! as! [NSDictionary])
+            let posts = (snapshot.value.objectForKey("posts")! as! NSDictionary).allValues as! [NSDictionary]
             
             func distinct<T: Equatable>(source: [T]) -> [T] {
                 var unique = [T]()
@@ -111,7 +78,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
                     (group) in
                     return (group, posts.filter { (post) -> Bool in
                         return (post["group"] as! String) == group
-                        }.map(Post.fromDictionary))
+                        }.enumerate().map(Post.fromDictionary))
                 }
             }
             
@@ -125,8 +92,8 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
                 self.postButton.enabled = false
                 self.postButton.tintColor = UIColor.clearColor()
             }
-        }, withCancelBlock: { error in
-            print(error.description)
+            }, withCancelBlock: { error in
+                print(error.description)
         })
         
         self.refreshControl.endRefreshing()
@@ -142,7 +109,6 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        print(segue.identifier)
         if segue.identifier == "Adminpage" {
             let vc = segue.destinationViewController as! AdminViewController
             vc.username = self.username
@@ -154,11 +120,12 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
             
             let myIndexPath = self.tableView.indexPathForSelectedRow
             vc.post = self.teacherPosts[myIndexPath!.section][myIndexPath!.row]
-        } else if segue.identifier == "Addpostpage" {
-            let vc = segue.destinationViewController as! SpeakViewControler
             vc.realm = self.realm
             vc.username = self.username
-            vc.password = self.password
+        } else if segue.identifier == "Addpostpage" {
+            let vc = segue.destinationViewController as! SpeakViewController
+            vc.realm = self.realm
+            vc.username = self.username
         }
     }
     
@@ -167,7 +134,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-            return self.teacherPosts.count
+        return self.teacherPosts.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

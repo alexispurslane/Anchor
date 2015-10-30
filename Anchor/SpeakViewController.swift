@@ -6,7 +6,7 @@
 //  Copyright © 2015 Christopher Dumas. All rights reserved.
 //
 import Firebase
-class SpeakViewControler: UIViewController {
+class SpeakViewController: UIViewController {
     var realm = ""
     var password = ""
     var username = ""
@@ -18,12 +18,12 @@ class SpeakViewControler: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if realm != "" && username != "" && password != "" {
-            newPost = true
-            self.navigationItem.title = "New Post to " + self.realm
-        } else if let _ = post {
+        if let _ = post {
             newComment = true
             self.navigationItem.title = "Comment on " + self.post!.author + "'s Post"
+        } else {
+            newPost = true
+            self.navigationItem.title = "New Post to " + self.realm
         }
     }
     
@@ -34,6 +34,7 @@ class SpeakViewControler: UIViewController {
             vc.newComment = self.newComment
             vc.text = self.textContent.text
             vc.post = self.post
+            vc.username = self.username
             vc.realm = self.realm
         }
     }
